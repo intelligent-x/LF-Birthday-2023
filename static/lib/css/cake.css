@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Huati';
+    src: url("./../font-face/Edwardian\ Script\ ITC/Edwardian Script ITC字体.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+div.waiting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    z-index: 100;
+
+    background-color: #FFF;
+
+    color: #000;
+    font: normal 3em "Microsoft Arial";
+}
+
+div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.cake-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+
+    background-image: linear-gradient( 
+        180deg, 
+        rgb( 6, 8, 42 ) 10%, 
+        rgb( 108, 94, 153) 50%, 
+        rgb( 161, 114, 162 ) 70%,
+        rgb( 199, 111, 136 ) 90%,
+        rgb( 244, 140, 129 ) 100%
+    );
+
+    background-attachment: fixed;
+}
+
+.cake-page .starsky {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.starsky .star {
+    position: absolute;
+
+    background-color: #FFF;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 3px #FFF;
+}
+
+.starsky .moving-star {
+    position: absolute;
+    top: 0;
+
+    background-color: #FFF;
+
+    box-shadow: 0 0 3px #FFF,
+        0 0 1px 1px #FFF;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation: star-moving 5s linear 0s infinite;
+}
+
+.starsky .moving-star::after {
+    content: '';
+
+    width: 5000%;
+    height: 100%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY( -50% );
+
+    background-image: linear-gradient(
+        90deg,
+        #FFF,
+        transparent
+    );
+}
+
+@keyframes star-moving {
+    0% {
+        transform: rotate( -45deg ) translateX( 0 ) ;
+        opacity: 1;
+    }
+    100% {
+        transform: rotate( -45deg ) translateX( -200vw );
+        opacity: 0;
+    }
+}
+
+.cake-page .img {
+    width: 90vw;
+    height: 50vh;
+
+    position: relative;
+    bottom: -10vh;
+    z-index: 1;
+
+    background-image: url("./../img/cake.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    perspective: 500px;
+}
+
+.cake-page .img::after {
+    content: 'Happy Birthday!';
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 45vw;
+    height: 7vh;
+
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    z-index: 1;
+
+    background-color: rgb( 250, 150, 90 );
+
+    box-shadow: -2px 3px 5px #000;
+
+    color: #FFF;
+    font: 1.8em Huati;
+
+    border-radius: 5px;
+
+    transform: rotateX( 30deg ) rotateY( 10deg ) rotateZ( -3deg ) translateZ( 40px ) translateY( 2px );
+}

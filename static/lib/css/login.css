@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: linear-gradient( 45deg, #ed765e, #fea858 );
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 2fr 2fr 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+
+
+    width: 70vw;
+    height: 50vh;
+
+    background-color: rgba( 255, 255, 255, .1 );
+    /* backdrop-filter: blur( 10px ); */
+
+    border-radius: 10px;
+
+    color: #FFF;
+
+    box-shadow: 0 0 2px #000;
+}
+
+form h1 {
+    grid-area: 1 / 1 / 2 / 3;
+
+    font: normal 2em "幼圆";
+}
+
+form label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding-right: 1em;
+
+    position: relative;
+
+    font: normal 1.1em "幼圆";
+}
+
+form label::after {
+    content: '';
+    width: 1px;
+    height: 70%;
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY( -50% );
+
+    background-image: linear-gradient( transparent, #FFF, transparent );
+}
+
+form input:not([type="button"]) {
+    width: 65%;
+    height: 50%;
+
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 1px solid #FFF;
+
+    outline: none;
+
+    color: #FFF;
+    text-align: center;
+    font: normal 1.1em "Microsoft Arial";
+
+    transition: all .1s ease 0s;
+}
+
+form input:not([type="button"]):hover {
+    width: 70%;
+}
+
+form span.messagebox {
+    grid-area: 4 / 1 / 5 / 3;
+}
+
+form input[type="button"] {
+    grid-area: 5 / 1 / 6 / 3;
+
+    width: 90%;
+    height: 60%;
+
+    background-color: transparent;
+
+    border: 1px solid #FFF;
+    border-radius: 10px;
+
+    outline: none;
+
+    color: #FFF;
+    font: normal 1.5em "幼圆";
+
+    transition: all .1s ease 9s;
+}
+
+form input[type="button"]:active {
+    background-color: #FFF;
+    color: rgb( 250, 150, 90 );
+}
+
+form span.messagebox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding-left: 4em;
+
+    color: #f00;
+}

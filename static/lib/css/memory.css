@@ -1,0 +1,108 @@
+.container .memory-page {
+    width: 100vw;
+    height: 380vh;
+    
+    overflow: visible;
+
+    position: relative;
+    top: 0;
+
+    z-index: 2;
+    
+    background-color: rgb( 250, 150, 90 );
+}
+/* 
+.memory-page::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba( 0, 0, 0, .3 );
+} */
+
+div[class$="box"] {
+    display: grid;
+    
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+
+    width: 80vw;
+    height: 30vh;
+
+    position: relative;
+    z-index: 3;
+
+    background-color: #FFF;
+}
+
+div[class$="box"] img {
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+
+    position: relative;
+
+    box-shadow: 0 0 0 10px #ccc;
+}
+
+.left-box p {
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+.right-box p {
+    padding-left: 2em;
+    padding-right: 1em;
+}
+
+.left-box {
+    grid-template-columns: 2fr 1fr;
+
+    transform-origin: left top;
+}
+
+.right-box {
+    grid-template-columns: 1fr 2fr;
+
+    transform-origin: right top;
+}
+
+.left-box::after {
+    content: '';
+    
+    width: 5vh;
+    height: 5vh;
+
+    z-index: 4;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate( 40%, -40% ) rotate( 36deg );
+
+    background-image: url( "./../img/star.png" );
+    background-size: cover;
+}
+
+.right-box::after {
+    content: '';
+    
+    width: 5vh;
+    height: 5vh;
+
+    z-index: 4;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate( -40%, -40% ) rotate( -36deg );
+
+    background-image: url( "./../img/star.png" );
+    background-size: cover;
+}

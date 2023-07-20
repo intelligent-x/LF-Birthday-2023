@@ -1,0 +1,18 @@
+{
+  "name": "birthday",
+  "version": "1.0.0",
+  "description": "birthday web app for Little Fish",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "intelligent",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "jquery": "^3.7.0",
+    "nodemon": "^3.0.1"
+  }
+}
